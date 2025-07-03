@@ -1,0 +1,29 @@
+[project]
+name = "ai_module"
+version = "0.1.0"
+description = "A module to generate synthetic healthcare data and train a fraud detection model."
+readme = "README.md"
+requires-python = ">=3.13"
+license = "MIT"
+
+authors = [
+    { name="Pranay Chowdary", email="pranaychowdary.pudota@aegletek.com" }
+]
+
+dependencies = [
+    "matplotlib>=3.10.3",
+    "scikit-learn>=1.7.0",
+    "seaborn>=0.13.2",
+    "xgboost>=3.0.2",
+    "pandas>=2.3.0",
+]
+
+[tool.uv.scripts]
+# Runs generate_data.py
+generate-data = "python generate_data.py"
+
+# Runs train_model.py
+train-model = "python train_model.py"
+
+# Example: Run both scripts (chained)
+run-all = "python generate_data.py && python train_model.py"
